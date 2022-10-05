@@ -1,0 +1,87 @@
+@use '../utilities/' as u;
+
+@mixin burger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        display: block;
+        height: 4px;
+        background-color: u.$pure-light;
+        transition: width ease .3s;
+}
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: u.$regular;
+    background-color: u.$main-color;
+}
+
+.burger-btn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    padding: 1em;
+    margin-right: 1.5em;
+    background: none;
+    border: none;
+    z-index: 100;
+    
+
+    &:focus{
+        outline: 1px solid rgb(214, 209, 209);
+        border-radius: 8px;  
+    }
+    
+    &__box{
+        position: relative;
+        height: 35px;
+        width: 35px;
+    
+    }
+
+    &__bars, &__bars::after, &__bars::before{
+        @include burger;
+    }
+
+    &__bars{
+    
+        width: 100%;
+     
+        &::before{
+            
+            top: 13px; 
+            width: 60%;
+        }
+
+        &::after{
+        
+            top: 26px;
+            width: 30%;
+        }
+    }
+
+    &:hover{
+        .burger-btn__bars::after, .burger-btn__bars::before{
+            
+            width: 100%;
+        } 
+    }
+    
+}
