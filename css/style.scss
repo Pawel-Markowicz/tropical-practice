@@ -27,10 +27,10 @@ body{
     width: 100%;
     font-size: 1.6rem;
     font-family: u.$regular;
-    color: u.$pure-light;
     background-color: u.$main-color;
 }
 
+// BURGER-IKONA
 .burger-btn{
     position: fixed;
     top: 20px;
@@ -42,7 +42,8 @@ body{
     margin-right: 1.5em;
     background: none;
     border: none;
-    z-index: 100;
+    z-index: 1000;
+  
     
 
     &:focus{
@@ -81,4 +82,50 @@ body{
         } 
     }
     
+}
+
+// NAWIGACJA
+.nav{
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    transition: transform ease 1s;
+    z-index: 100;
+  
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item{
+        position: relative;
+        text-decoration: none;
+        color: u.$pure-light;
+        font-size: 3.6rem;
+        padding: .7em;
+        
+    }
+
+    &__item::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 0;
+        width: 3px;
+        background-color: u.$pure-light;
+        transition: transform ease .5s;
+        transform: scale(0);
+    }
+
+    &__item:hover::before{
+        height: 100%;
+        transform: scale(1);
+    }
 }
