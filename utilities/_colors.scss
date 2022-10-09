@@ -1,2 +1,13 @@
-$main-color: rgb(13, 220, 41);
+$main-color: rgb(13, 196, 220);
 $pure-light: rgb(255, 255, 255);
+$light: rgb(224, 219, 219);
+$dark: rgba(24, 23, 23, 0.789);
+
+$main-gradient: linear-gradient(
+    45deg, rgb(12, 99, 205),
+    rgb(75, 184, 227)
+);   
+$main-gradient-hero: linear-gradient(
+    45deg, rgb(2, 104, 228,.6),
+    rgb(75, 184, 227,.6)
+);   

@@ -27,8 +27,73 @@ body{
     width: 100%;
     font-size: 1.6rem;
     font-family: u.$regular;
-    background-color: u.$main-color;
+    
 }
+
+// KOMPONENTY
+.wrapper{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.btn-special-animation{
+    position: relative;
+    transition: background-color .3s;
+    overflow: hidden;
+    z-index: 0;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        transform-origin: right;
+        transition: transform .5s;
+        transform: scaleX(0);
+        z-index: -1;
+    }
+
+    &:hover::before{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+.white-block{
+    position: absolute;
+    height: 10%;
+    width: 50%;
+    background-color: u.$pure-light;
+
+}
+
+.white-block-left{
+    bottom: 0;
+    left: -10%;
+    transform: skewX(45deg);
+    
+}
+
+@keyframes navItemsAnimation{
+    from{
+        transform: translateX(200%);
+    }
+
+    to{
+        transform: translateX(0);
+    }
+}
+// dzięki temu ostatni wjeżdżający link nie skacze w animacji
+// 
+.nav-items-animation{
+    animation: navItemsAnimation 1s both;
+}
+
+
 
 // BURGER-IKONA
 .burger-btn{
@@ -36,23 +101,25 @@ body{
     top: 20px;
     right: 20px;
     display: block;
-    width: 35px;
-    height: 35px;
     padding: 1em;
     margin-right: 1.5em;
     background: none;
     border: none;
+    cursor: pointer;
     z-index: 1000;
   
     
 
-    &:focus{
-        outline: 1px solid rgb(214, 209, 209);
+    &:focus{        
+        outline: none;
+        border: 1px solid rgba(255, 255, 255, 0.5);
         border-radius: 8px;  
     }
     
     &__box{
-        position: relative;
+       position: relative;
+       top: 0;
+       left: 0;
         height: 35px;
         width: 35px;
     
@@ -93,7 +160,9 @@ body{
     justify-content: center;
     height: 100vh;
     width: 100%;
+    background-image: u.$main-gradient;
     transition: transform ease 1s;
+    transform: translateX(100%);
     z-index: 100;
   
 
@@ -127,5 +196,60 @@ body{
     &__item:hover::before{
         height: 100%;
         transform: scale(1);
+    }
+
+    &--active{
+        transform: translateX(0%);
+    }
+}
+
+// HEADER
+
+.header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    font-family: u.$logo;
+    color: u.$pure-light;
+    background-image: u.$main-gradient-hero, url('../img/bora-bora-g289277c19_640.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    &__title{
+        margin-bottom: 0.3em;
+        font-size: 8rem;
+        font-weight: 300;
+    }
+
+    &__text{
+        margin-bottom: 0.3em;
+        font-size: 3rem;
+    }
+
+    &__btn{
+        padding: .5em 1em;
+        font-size: 2rem;
+        color: u.$dark;
+        font-family: u.$thin;
+        background-color: u.$pure-light;
+        border-radius: 8px;
+        text-decoration: none;
+        cursor: pointer;
+
+        &::before{
+            background-color: u.$light;
+        }
+    }
+
+}
+
+
+@media (min-width: 576px){
+    .header{
+        background-image: u.$main-gradient-hero, url('../img/bora-bora-g70be969a0_1920.jpg');
     }
 }
