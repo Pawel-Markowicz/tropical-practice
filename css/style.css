@@ -103,9 +103,31 @@ body {
 }
 
 .white-block-left {
-  bottom: 0;
+  bottom: -1%;
   left: -10%;
   transform: skewX(45deg);
+}
+
+.white-block-right {
+  top: 0;
+  right: -10%;
+  transform: skewX(45deg);
+}
+
+.section-padding {
+  padding: 1.4em 2em;
+  padding-bottom: 12.4rem;
+}
+
+.section-white {
+  padding: 8em;
+}
+
+.heading-padding {
+  padding: 1.5em 1em;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 @-webkit-keyframes navItemsAnimation {
@@ -257,11 +279,284 @@ body {
   cursor: pointer;
 }
 .header__btn::before {
-  background-color: rgb(224, 219, 219);
+  background-color: rgb(180, 176, 176);
+}
+
+.dreams h2 {
+  color: rgb(13, 162, 182);
+}
+.dreams__box {
+  display: flex;
+  align-items: flex-end;
+  padding: 2em;
+}
+.dreams__box--right {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  text-align: right;
+  padding: 2em;
+}
+.dreams__img {
+  width: 50%;
+}
+.dreams__box-text {
+  padding: 1em;
+}
+
+.hero-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-image: linear-gradient(45deg, rgba(2, 104, 228, 0.6), rgba(75, 184, 227, 0.6)), url("../img/hawaii-79928_640.jpg");
+  overflow: hidden;
+}
+.hero-img__title {
+  font-family: "amatic_scregular";
+  font-size: 6rem;
+  margin-bottom: 0.5em;
+}
+.hero-img__text {
+  padding: 1em;
+  font-family: "poppinslight_italic";
+}
+.hero-img hr {
+  height: 2px;
+  width: 70%;
+  color: rgb(255, 255, 255);
+  z-index: 100;
+}
+
+.islands h2 {
+  color: rgb(13, 162, 182);
+}
+.islands__cards {
+  display: flex;
+  justify-content: space-around;
+}
+.islands__card {
+  position: relative;
+  padding: 0.5em;
+  height: 450px;
+  width: 30%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.islands__card:hover .islands__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.islands__card:hover .islands__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.islands__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  transition: transform 1s, opacity 1s ease;
+}
+.islands__card-img--first {
+  background-image: linear-gradient(45deg, rgba(55, 125, 211, 0.5), rgba(107, 191, 224, 0.5)), url("../img/water-3354063_1920.jpg");
+}
+.islands__card-img--second {
+  background-image: linear-gradient(45deg, rgba(0, 105, 233, 0.5), rgba(33, 173, 228, 0.5)), url("../img/water-3354063_1920.jpg");
+}
+.islands__card-img--third {
+  background-image: linear-gradient(45deg, rgba(134, 12, 205, 0.5), rgba(194, 75, 227, 0.5)), url("../img/water-3354063_1920.jpg");
+}
+.islands__card-img-title {
+  font-family: "amatic_scregular", cursive;
+  font-size: 2.8rem;
+}
+.islands__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.2rem;
+}
+.islands__card-img-info i {
+  margin-right: 0.3rem;
+}
+.islands__card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(45deg, rgb(55, 125, 211), rgb(107, 191, 224));
+  border-radius: 8px;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
+}
+.islands__card-info-title {
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  font-family: "amatic_scregular";
+  font-size: 2.8rem;
+  transform: translateX(-50%);
+}
+.islands__card-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+.islands__card-info-list-item {
+  padding: 1em;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.islands__card-info-list-item:last-child {
+  border-bottom: none;
+}
+.islands__card-info-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 2em;
+  padding: 1em;
+  width: 80%;
+  color: rgb(255, 255, 255);
+  background-color: rgb(7, 184, 34);
+  border: none;
+  border-radius: 8px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.islands__card-info-btn::before {
+  background-color: rgba(105, 236, 123, 0.673);
+}
+
+.offers {
+  background-image: linear-gradient(45deg, rgba(2, 104, 228, 0.6), rgba(75, 184, 227, 0.6)), url("../img/hd-wallpaper-3021072_640tahiti.jpg");
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+}
+.offers h2 {
+  color: rgb(255, 255, 255);
+}
+.offers__option {
+  display: flex;
+  align-items: flex-end;
+  padding: 0.5em;
+}
+.offers__option-img {
+  width: 50%;
+}
+.offers__option-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+  padding: 1em;
+}
+.offers__option-info p:first-child {
+  margin-bottom: 0.5em;
+}
+.offers__option-btn {
+  width: 45%;
+  margin-top: 1em;
+  padding: 0.3em 0.7em;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(7, 184, 34);
+}
+.offers__option-btn::before {
+  background-color: rgba(105, 236, 123, 0.673);
+  color: rgb(180, 176, 176);
+}
+.offers__option-middle {
+  flex-direction: row-reverse;
+}
+
+.reviews__box {
+  position: relative;
+  font-size: 1.6rem;
+  padding: 2em;
+  margin: 2em;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px 2px rgb(140, 140, 140);
+}
+.reviews__box-quote {
+  color: rgb(13, 162, 182);
+  font-size: 5rem;
+  margin-bottom: 0.2em;
+}
+.reviews__box-text {
+  font-size: 2rem;
+}
+.reviews__box-text p:last-child {
+  font-size: 3rem;
+  margin-top: 0.5em;
+}
+.reviews__box-img {
+  position: absolute;
+  right: 10%;
+  top: -10%;
+}
+.reviews__box-img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 576px) {
   .header {
     background-image: linear-gradient(45deg, rgba(2, 104, 228, 0.6), rgba(75, 184, 227, 0.6)), url("../img/bora-bora-g70be969a0_1920.jpg");
+  }
+  .hero-img {
+    background-image: linear-gradient(45deg, rgba(2, 104, 228, 0.6), rgba(75, 184, 227, 0.6)), url("../img/hawaii-79928_1920.jpg");
+  }
+  .offers {
+    background-image: linear-gradient(45deg, rgba(2, 104, 228, 0.6), rgba(75, 184, 227, 0.6)), url("../img/hd-wallpaper-3021072_1920tahiti.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .dreams__img {
+    width: 100%;
+  }
+  .dreams__box {
+    flex-direction: column;
+    text-align: left;
+  }
+  .offers__option {
+    display: flex;
+    flex-direction: column;
+  }
+  .offers__option-img {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .offers__option-info {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 768px) {
+  .islands__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .islands__card {
+    width: 50%;
   }
 }/*# sourceMappingURL=style.css.map */

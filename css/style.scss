@@ -68,14 +68,40 @@ body{
     height: 10%;
     width: 50%;
     background-color: u.$pure-light;
+    
 
 }
 
 .white-block-left{
-    bottom: 0;
+    bottom: -1%;
     left: -10%;
     transform: skewX(45deg);
     
+}
+
+.white-block-right{
+    top: 0;
+    right: -10%;
+    transform: skewX(45deg);
+    
+}
+
+.section-padding{
+    padding: 1.4em 2em;
+    padding-bottom: 12.4rem;
+    
+
+}
+
+.section-white{
+    padding: 8em;
+}
+
+.heading-padding{
+    padding: 1.5em 1em;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 @keyframes navItemsAnimation{
@@ -247,9 +273,363 @@ body{
 
 }
 
+.dreams{
+    h2{
+        color: u.$main-color;
+    }
+
+    &__box{
+        display: flex;
+        align-items: flex-end;
+        padding: 2em;
+        
+    }
+    &__box--right{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        text-align: right;
+        padding: 2em;
+        
+    }
+
+    &__img{
+        width: 50%;
+
+    }
+
+    &__box-text{
+        padding: 1em;
+    }
+}
+
+
+.hero-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    color: u.$pure-light;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: u.$main-gradient-hero, url('../img/hawaii-79928_640.jpg');
+    overflow: hidden;
+
+    &__title{
+        font-family: u.$logo;
+        font-size: 6rem;
+        margin-bottom: 0.5em;
+    }
+
+    &__text{
+        padding: 1em;
+        font-family: u.$thin-italic;
+    }
+
+    hr{
+        height: 2px;
+        width: 70%; 
+        color: u.$pure-light;
+        z-index: 100;
+    }
+}
+
+// ISLANDS
+
+.islands{
+
+    h2{
+        color: u.$main-color;
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-around;
+        
+    }
+    &__card{
+        position: relative;
+        padding: .5em;
+        height: 450px;
+        width: 30%;
+        color: u.$pure-light;
+        text-align: center;
+
+        &:hover{
+            .islands__card-img{
+                transform: rotateY(-180deg);
+                opacity: 0;
+            }
+
+            .islands__card-info{
+                transform: rotateY(0);
+                opacity: 1;
+            }
+        }
+
+        &-img{
+            padding: 2em;
+            height: 100%;
+            border-radius: 8px;
+            background-size: cover;
+            transition: transform 1s, opacity 1s ease;
+
+            &--first{
+                background-image: u.$light-blue-gradient, url('../img/water-3354063_1920.jpg');
+                
+            }
+            &--second{
+                background-image: u.$blue-gradient, url('../img/water-3354063_1920.jpg');
+                
+            }
+            &--third{
+                background-image: u.$purple-gradient, url('../img/water-3354063_1920.jpg');
+                
+            }
+
+            &-title{
+                font-family: u.$logo, cursive;
+                font-size: 2.8rem;
+                
+            }
+
+            &-info{
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+                font-size: 1.2rem;
+                i{
+                    margin-right: 0.3rem;
+                }
+            }
+        }
+
+// OTHER SIDE OF THE PAGE
+
+        &-info{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: u.$light-blue-gradient-solid;
+            border-radius: 8px;
+            opacity: 0;
+            transform: rotateY(180deg);
+            transition: transform 1s, opacity 1s;
+
+            &-title{
+                position: absolute;
+                top: 2em;
+	            left: 50%;
+                font-family: u.$logo;
+                font-size: 2.8rem;
+	            transform: translateX(-50%);
+            }
+
+            &-list{
+                margin: 0 auto;
+                width: 70%;
+                list-style: none;
+                &-item{
+                    padding: 1em;
+                    font-size: 1.4rem;
+                    border-bottom: 1px solid u.$pure-light;
+
+                    &:last-child{
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            &-btn{
+                position: absolute;
+	            left: 50%;
+                bottom: 2em;
+                padding: 1em;
+                width: 80%;
+                color: u.$pure-light;
+                background-color: u.$green;
+                border: none;
+                border-radius: 8px;
+                transform: translateX(-50%);
+                cursor: pointer;
+
+                &::before{
+                    background-color: u.$green-hover;
+                }
+            }
+        }
+    }
+}
+
+// OFFERS
+
+.offers{
+    background-image: u.$main-gradient-hero, url('../img/hd-wallpaper-3021072_640tahiti.jpg');
+    background-size: cover;
+    background-position: center;
+    color: u.$pure-light;
+    h2{
+        color: u.$pure-light;
+        
+    }
+    &__option{
+        display: flex;
+        align-items: flex-end;
+        padding: .5em;
+
+        &-img{
+            width: 50%;
+        }
+
+        &-info{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.3rem;
+            padding: 1em;
+            & p:first-child{
+                margin-bottom: 0.5em;
+            }
+        }
+       
+        &-btn{
+            
+            width: 45%;
+            margin-top: 1em;
+            padding: 0.3em 0.7em;
+            font-size: 2rem;
+            color: u.$pure-light;
+            border: none;
+            border-radius: 8px;
+            background-color: u.$green;
+
+            &::before{
+                background-color: u.$green-hover;
+                color: u.$light;
+            }
+        }
+    }
+
+    &__option-middle{
+        flex-direction: row-reverse;
+    }
+}
+
+
+// REVIEWS
+
+.reviews{
+    &__box{
+        position: relative;
+        font-size: 1.6rem;
+        padding: 2em;
+        margin: 2em;
+        border-radius: 8px;
+        box-shadow: 5px 5px 5px 2px rgb(140, 140, 140);
+    }
+
+    &__box-quote{
+        color: u.$main-color;
+        font-size: 5rem;
+        margin-bottom: 0.2em;
+
+        
+    }
+
+    &__box-text{
+        font-size: 2rem;
+        & p:last-child{
+            font-size: 3rem;
+            margin-top: .5em;
+        }
+    }
+
+    &__box-img{
+        position: absolute;
+        right: 10%;
+        top: -10%;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+    }
+
+
+}
+
+
+// MEDIA QUERIES
 
 @media (min-width: 576px){
     .header{
         background-image: u.$main-gradient-hero, url('../img/bora-bora-g70be969a0_1920.jpg');
+    }
+
+    .hero-img{
+        background-image: u.$main-gradient-hero, url('../img/hawaii-79928_1920.jpg');
+    }
+
+    .offers{
+        background-image: u.$main-gradient-hero, url('../img/hd-wallpaper-3021072_1920tahiti.jpg');
+    }
+}
+
+@media (max-width: 768px){
+   .dreams{
+    &__img{
+        width: 100%;
+    }
+
+    &__box{
+        flex-direction: column;
+        text-align: left;
+    }
+
+   }
+
+   .offers{
+    &__option{
+        display: flex;
+        flex-direction: column;
+
+        &-img{
+            width: 100%;
+        }
+    }
+   }
+}
+
+@media (max-width: 992px){
+
+    .offers{
+        &__option{
+            &-info{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .islands{
+        &__cards{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__card{
+            width: 50%;
+        }
     }
 }

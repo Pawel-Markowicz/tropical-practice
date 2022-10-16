@@ -1,6 +1,8 @@
-$main-color: rgb(13, 196, 220);
+$main-color: rgb(13, 162, 182);
 $pure-light: rgb(255, 255, 255);
-$light: rgb(224, 219, 219);
+$green: rgb(7, 184, 34);
+$green-hover: rgba(105, 236, 123, 0.673);
+$light: rgb(180, 176, 176);
 $dark: rgba(24, 23, 23, 0.789);
 
 $main-gradient: linear-gradient(
@@ -11,3 +13,22 @@ $main-gradient-hero: linear-gradient(
     45deg, rgb(2, 104, 228,.6),
     rgb(75, 184, 227,.6)
 );   
+
+
+$light-blue-gradient: linear-gradient(
+    45deg, rgba(55, 125, 211, .5),
+    rgba(107, 191, 224, .5)  
+);
+$light-blue-gradient-solid: linear-gradient(
+    45deg, rgb(55, 125, 211),
+    rgb(107, 191, 224) 
+);   
+
+$blue-gradient: linear-gradient(
+    45deg, rgba(0, 105, 233, .5),
+    rgba(33, 173, 228, .5)  
+);
+$purple-gradient: linear-gradient(
+    45deg, rgba(134, 12, 205, .5),
+    rgba(194, 75, 227, .5)  
+);
